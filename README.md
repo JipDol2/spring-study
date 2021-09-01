@@ -1,1 +1,2 @@
-hello im seong jqu and i will fight with Tae hee!!!!!!
+hello im seong jqu and i will conflict fight with Tae hee
+
