@@ -9,13 +9,21 @@ import com.example.project.member.MemoryMemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+/**
+ * 생성자 주입 방법
+ * 1. 생성자를 사용
+ * 2. setter를 사용
+ * 3. 필드 주입
+ * 4. 일반메서드 주입 (의존관계 자동 주입 : Autowired는 스프링 컨테이너가 관리하는 스프링 빈이어야 한다. 스프링 빈이 아닌 클래스에서 @Autowired를 적용해도
+ *      아무 소용이 없다.)
+ */
 @Component
 public class OrderServiceImpl implements OrderService{
 
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    @Autowired
+    @Autowired //생성자가 단 한개만 있다면 @Autowired를 생략해도 된다.
     public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
