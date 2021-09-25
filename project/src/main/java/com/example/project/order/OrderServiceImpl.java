@@ -1,5 +1,6 @@
 package com.example.project.order;
 
+import com.example.project.annotaion.MainDiscountPolicy;
 import com.example.project.discount.DiscountPolicy;
 import com.example.project.discount.FixDiscountPolicy;
 import com.example.project.discount.RateDiscountPolicy;
@@ -24,7 +25,7 @@ public class OrderServiceImpl implements OrderService{
     private final DiscountPolicy discountPolicy;
 
     @Autowired //생성자가 단 한개만 있다면 @Autowired를 생략해도 된다.
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository, @MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
